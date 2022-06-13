@@ -5,6 +5,8 @@ services:
         environment:
             - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
             - "discovery.type=single-node"
+            - "transport.host=localhost"
+            - "bootstrap.system_call_filter=false"
         ports:
             - "9200:9200"
         volumes:

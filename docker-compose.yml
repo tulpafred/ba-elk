@@ -9,11 +9,13 @@ services:
             - "9200:9200"
         volumes:
             - elasticsearch_data:/usr/share/elasticsearch/data
+        restart: unless-stopped
 
     kibana:
         image: "docker.elastic.co/kibana/kibana:7.2.0"
         ports:
             - "5601:5601"
+        restart: unless-stopped
 
 volumes:
     elasticsearch_data:
